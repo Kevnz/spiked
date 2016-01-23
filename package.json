@@ -1,0 +1,36 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/dev",
+    "serve": "node ./bin/www",
+    "prebuild": "rm -rf build",
+    "build": "babel src --out-dir build",
+    "postbuild": "cp -R ./views ./build && cp -R ./public ./build",
+    "bundle": "browserify --debug app/client.js -t babelify --outfile public/js/bundle.js",
+    "watch": "watchify -t babelify app/client.js --outfile public/js/bundle.js",
+    "babel:help": "babel --help"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
+    "babel-plugin-react-transform": "^2.0.0-beta1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1"
+  }
+}
