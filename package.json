@@ -7,7 +7,7 @@
     "serve": "node ./bin/www",
     "prebuild": "rm -rf build",
     "build": "babel src --out-dir build",
-    "postbuild": "cp -R ./views ./build && cp -R ./public ./build",
+    "postbuild": "cp -R ./views ./build && cp -R ./public ./build && cp -R ./bin ./build && cp -R package.json ./build ",
     "bundle": "browserify --debug app/client.js -t babelify --outfile public/js/bundle.js",
     "watch": "watchify -t babelify app/client.js --outfile public/js/bundle.js",
     "babel:help": "babel --help",
