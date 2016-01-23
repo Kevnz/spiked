@@ -10,7 +10,9 @@
     "postbuild": "cp -R ./views ./build && cp -R ./public ./build",
     "bundle": "browserify --debug app/client.js -t babelify --outfile public/js/bundle.js",
     "watch": "watchify -t babelify app/client.js --outfile public/js/bundle.js",
-    "babel:help": "babel --help"
+    "babel:help": "babel --help",
+    "prepublish": "npm run build",
+    "publish": "gulp deploy"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -31,6 +33,8 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.3.13",
     "babelify": "^7.2.0",
-    "browserify": "^12.0.1"
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4"
   }
 }
